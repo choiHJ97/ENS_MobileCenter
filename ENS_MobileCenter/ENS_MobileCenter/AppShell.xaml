@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:ENS_MobileCenter.Views"
+       xmlns:this="clr-namespace:ENS_MobileCenter"
+       x:Class="ENS_MobileCenter.AppShell">
+
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+    
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+    -->
+    <NavigationPage.TitleView>
+        <Label Text="태양광 조회 시스템" HorizontalOptions= "Center" />
+        
+    </NavigationPage.TitleView>
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="#009688" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#009688" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <ShellContent Title="발전현황" Route="DayPage" ContentTemplate="{DataTemplate local:DayPage}" />
+        <ShellContent Title="발전이력"  ContentTemplate="{DataTemplate local:HistroyPage}" />
+        <ShellContent Title="이벤트이력" ContentTemplate="{DataTemplate local:EventPage}" />
+        <ShellContent Title="회원정보" ContentTemplate="{DataTemplate local:MemberPage}"/>
+        <ShellContent Title="로그아웃" ContentTemplate="{DataTemplate local:PageLogout}"/>
+
+    </TabBar>
+
+    <!--
+        If you would like to navigate to this content you can do so by calling
+        await Shell.Current.GoToAsync("//LoginPage");
+    -->
+    <TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:DayPage}" />
+    </TabBar>
+
+
+</Shell>

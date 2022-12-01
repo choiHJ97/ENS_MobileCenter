@@ -1,0 +1,155 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
+    <PackageReference Include="MySqlConnector" Version="2.2.1" />
+    <PackageReference Include="SimpleCharts" Version="1.0.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DevExpress.Xamarin.Android.Charts">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.Xamarin.Android.Charts.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xamarin.Android.CollectionView">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.Xamarin.Android.CollectionView.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xamarin.Android.Editors">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.Xamarin.Android.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xamarin.Android.Grid">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.Xamarin.Android.Grid.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xamarin.Android.Navigation">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.Xamarin.Android.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xamarin.Android.Scheduler">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.Xamarin.Android.Scheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xamarin.iOS.Charts">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.Xamarin.iOS.Charts.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xamarin.iOS.CollectionView">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.Xamarin.iOS.CollectionView.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xamarin.iOS.Editors">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.Xamarin.iOS.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xamarin.iOS.Grid">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.Xamarin.iOS.Grid.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xamarin.iOS.Navigation">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.Xamarin.iOS.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xamarin.iOS.Scheduler">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.Xamarin.iOS.Scheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.Charts">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.Charts.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.Charts.Android">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.Charts.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.Charts.iOS">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.Charts.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.CollectionView">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.CollectionView.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.CollectionView.Android">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.CollectionView.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.CollectionView.iOS">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.CollectionView.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.Core">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.Core.Android">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.Core.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.Core.iOS">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.Core.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.Editors">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.Editors.Android">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.Editors.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.Editors.iOS">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.Editors.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.Grid">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.Grid.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.Grid.Android">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.Grid.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.Grid.iOS">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.Grid.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.Navigation">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.Navigation.Android">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.Navigation.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.Navigation.iOS">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.Navigation.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.Scheduler">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.Scheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.Scheduler.Android">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.Scheduler.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XamarinForms.Scheduler.iOS">
+      <HintPath>C:\Users\SYS\Desktop\DevExpress.Xamarin\Binaries\DevExpress.XamarinForms.Scheduler.iOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="App.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AppShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PageLogin.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PageSignUp.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\AboutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DayPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EventPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\HistroyPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MemberPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PageLogout.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
