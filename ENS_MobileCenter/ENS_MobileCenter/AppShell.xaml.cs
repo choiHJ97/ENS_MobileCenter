@@ -1,52 +1,63 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using DevExpress.XamarinForms.Scheduler;
+using System.Windows.Input;
 using ENS_MobileCenter;
-using ENS_MobileCenter.Models;
 using ENS_MobileCenter.Views;
+using Rg.Plugins.Popup.Services;
 using Xamarin.Forms;
+using System.Threading;
+using System.Runtime.InteropServices;
 
 namespace ENS_MobileCenter
 {
     public partial class AppShell : Xamarin.Forms.Shell
     {
+        public static string strID = PageLogin.IdString;
+        public static string strCode = PageLogin.strpcode;
         public AppShell()
         {
             InitializeComponent();
+            DayPage.CreateChart();
+            WeekPage.CreateChart();
+            WeekPage.GetCreateGrid();
+            MonthPage.GetCreateGrid();
+            NavigationPage.SetHasNavigationBar(this, true);
+            DependencyService.Get<IStatusBar>().ShowStatusBar();//상단바 복구
             Routing.RegisterRoute(nameof(DayPage), typeof(DayPage));
-            Routing.RegisterRoute(nameof(HistroyPage), typeof(HistroyPage));
+            Routing.RegisterRoute(nameof(MonthPage), typeof(MonthPage));
             Routing.RegisterRoute(nameof(EventPage), typeof(EventPage));
             Routing.RegisterRoute(nameof(MemberPage), typeof(MemberPage));
             Routing.RegisterRoute(nameof(PageLogin), typeof(PageLogin));
-        }
-        public override bool OnBackButtonPressed()
-        {
+            Routing.RegisterRoute(nameof(PageLogout), typeof(PageLogout));
+            Routing.RegisterRoute(nameof(NoticePage), typeof(NoticePage));
+            BindingContext = this;
+    }
 
-            ServiceLocator.Current.GetInstance<IDialogService>().DisplayAlert("로그아웃", "로그아웃 하시겠습니까?", "취소", "확인").ContinueWith(task =>
-            {
-                if (task.Result)
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            //refresh the data
+        }
+
+
+
+        public ICommand ExecuteLogout =>
+new Command(async () => {
+                var result = await this.DisplayAlert("로그아웃", "로그아웃 하시겠습니까?", "취소", "확인");
+
+                if (result == false)
                 {
-                    ServiceLocator.Current.GetInstance<INavigationService>().GoBack();
-                }
+        Navigation.RemovePage(this);
+        Application.Current.MainPage.Navigation.PopAsync();
+        Application.Current.MainPage = new PageLogin();
+    }
+                else
+                {
+        await Navigation.PopAsync(true);
+    }
             });
-
-            return true;
-        }
-
-   
-         async void AnswerMessage()
-        {
-            bool answer = await DisplayAlert("로그아웃", "로그아웃 하시겠습니까?", "취소", "확인");
-            if (answer == false)
-            {
-                Application.Current.MainPage = new PageLogin();
-            }
-            else
-            {
-                Application.Current.MainPage = new AppShell();
-            }
-        }
+       
     }
 }
 

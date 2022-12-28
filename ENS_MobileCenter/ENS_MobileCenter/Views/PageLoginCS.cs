@@ -67,7 +67,7 @@ namespace ENS_MobileCenter.Views
             if (isValid)
             {
                 App.IsUserLoggedIn = true;
-                MainPageCS mainPageCS = new MainPageCS();
+                AppShell mainPageCS = new AppShell();
                 Navigation.InsertPageBefore(mainPageCS, this);
                 await Navigation.PopAsync();
             }

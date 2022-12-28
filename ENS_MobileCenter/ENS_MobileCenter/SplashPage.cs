@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ENS_MobileCenter.Views;
+using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -12,17 +13,15 @@ namespace ENS_MobileCenter
 
         public SplashPage()
         {
-            //SplashPage 상단 네비게이션 바를 안보이도록 설정
-            NavigationPage.SetHasNavigationBar(this, false);
-
+            DependencyService.Get<IStatusBar>().HideStatusBar();//상단바 숨기기
             var sub = new AbsoluteLayout();
-            string imgFile = "Splash.png";
+            string imgFile = "Splash.jpg";
             if (Device.RuntimePlatform == Device.UWP) imgFile = "Assets\\" + imgFile;
             splashImage = new Image
             {
                 Source = imgFile,
                 WidthRequest = 300, //가로크기
-                HeightRequest = 600 //세로크기
+                HeightRequest = 300 //세로크기
             };
 
             AbsoluteLayout.SetLayoutFlags(splashImage,
@@ -38,6 +37,7 @@ namespace ENS_MobileCenter
 
         //사라질때 크기 효과
         protected override async void OnAppearing()
+
         {
             base.OnAppearing();
 

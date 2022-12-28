@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "417552483382",
+    "project_id": "pc-api-7467446077679989434-811",
+    "storage_bucket": "pc-api-7467446077679989434-811.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417552483382:android:44ca7b7df136d1695cc497",
+        "android_client_info": {
+          "package_name": "com.companyname.ens_mobilecenter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "417552483382-mhau458gvb341sl0qnmr8h8lq7jmvsod.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTadunbNtSid7SOrM9RC8wLTsC81-dhjo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "417552483382-mhau458gvb341sl0qnmr8h8lq7jmvsod.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

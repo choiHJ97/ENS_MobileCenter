@@ -2,29 +2,90 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ENS_MobileCenter.Views.PageLogin"
-             BackgroundImageSource="bgimg.jpg">
+             xmlns:controls="clr-namespace:ENS_MobileCenter.Views;assembly=ENS_MobileCenter"
+             BackgroundColor="White">
+    <Grid>
 
-        <StackLayout Padding="30" Spacing="2" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" >
-            <Label Text="태양광 발전소"
-            FontSize="30"
-                   TextColor="White" HorizontalOptions="Center"/>
-            <Label Text="클라우드 모니터링 관제 시스템" 
-                   TextColor="White" HorizontalOptions="Center"/>
-            <Label Text="아이디" />
-            <Entry x:Name="usernameEntry" Placeholder="username"/>
-            <Label Text="비밀번호"/>
-            <Entry x:Name="passwordEntry" IsPassword="true"/>
-            <Button Text="로그인" Clicked="OnLoginButtonClicked" 
-                    Opacity="0.50" />
-            <Label x:Name="messageLabel" />
-            <Button Text="Sign Up" Clicked="OnSignUpButtonClicked"
-                    Opacity="0.50"/>
-        <Image Source="Logo.png"
-                   HeightRequest="100"
-                   WidthRequest="200"
-               HorizontalOptions="Center"/>
-            
+        <StackLayout Grid.Row="0" Padding="70,0,70,0" Spacing="10" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" >
+            <Image Source="loginlogo.png" WidthRequest="180"/>
+            <StackLayout Spacing="5">
+                <Grid  Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                    </Grid.RowDefinitions>
+                    <Label Text=" 로그인"  FontFamily="RegularFont"
+                   TextColor="#0B9BD2" HorizontalOptions="Start"
+               FontSize="16" LineHeight="12"/>
+                    <Label Grid.Row="0" x:Name="messageLabel" TextColor="Red" HorizontalOptions="End" VerticalOptions="Center"/>
+                    <BoxView Grid.Row="2" HeightRequest="1" Color="#D3D3D3"/>
+                </Grid>
+                <Grid>
+                    <Frame HasShadow="False"
+                       x:Name="IDFrame"
+                       BorderColor="#D3D3D3"
+                       Padding="{OnPlatform Android='5,0,5,0', iOS='8,0,8,0'}"
+                       Margin="{OnPlatform Android='0,0,0,0', iOS='0,0,0,0'}" />
+
+                    <controls:BorderlessEntry 
+                    HeightRequest="40"
+                    x:Name="usernameEntry" VerticalOptions="FillAndExpand"
+                    Placeholder="아이디" TextColor="Black" FontSize="16" VerticalTextAlignment="Center" FontFamily="SpoqaRegular" 
+                    Margin="10,0,0,0" TextChanged="usernameEntry_TextChanged"
+                    />
+                </Grid>
+                <Grid>
+                    <Frame HasShadow="False"
+                       x:Name="PWDFrame"
+                       BorderColor="#D3D3D3"
+                       Padding="{OnPlatform Android='5,0,5,0', iOS='8,0,8,0'}"
+                       Margin="{OnPlatform Android='0,0,0,0', iOS='0,0,0,0'}" />
+
+                    <controls:BorderlessEntry
+                    HeightRequest="40"
+                    x:Name="passwordEntry" VerticalOptions="FillAndExpand" 
+                    Placeholder="비밀번호" IsPassword="true" TextColor="Black" FontSize="16" VerticalTextAlignment="Center" FontFamily="SpoqaRegular" 
+                    Margin="10,0,0,0" TextChanged="passwordEntry_TextChanged"/>
+                </Grid>
+                <Button Grid.Row="0" Text="로그인" Clicked="OnLoginButtonClicked" TextColor="White" FontSize="22"  FontFamily="SpoqaRegular" 
+                    Opacity="0.50" BackgroundColor="#009688"/>
+                <StackLayout>
+                    <Grid>
+                        <Grid Grid.Column="0">
+                            <CheckBox x:Name="IDSave" Color="#009688" HorizontalOptions="Start" VerticalOptions="Center" CheckedChanged="IDSave_CheckedChanged">
+                            </CheckBox>
+                            <Label Text="아이디 저장" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center" FontFamily="SpoqaRegular" />
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <CheckBox  x:Name="PWDSave" Color="#009688" HorizontalOptions="Start" VerticalOptions="Center" CheckedChanged="PWDSave_CheckedChanged">
+                            </CheckBox>
+                            <Label Text="   비밀번호 저장" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center"  FontFamily="SpoqaRegular" />
+                        </Grid>
+                    </Grid>
+                </StackLayout>
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+                    <Grid>
+
+                    </Grid>
+                </Grid>
+
+            </StackLayout>
+            <Grid Grid.Row="2">
+                <Grid>
+                    <Label Grid.Row="0" TextColor="Gray" FontSize="12" FontFamily="RegularFont" HorizontalOptions="Center">
+                        <Label.Text>
+                            태양광 발전소 모니터링 시스템 앱입니다 
+        로그인 관련 문의 : (주)이엔에스
+                        </Label.Text>
+                    </Label>
+                </Grid>
+                <Image Grid.Row="1" Source="greennewdealLogo.png"
+                   HeightRequest="60"/>
+            </Grid>
         </StackLayout>
-
+    </Grid>
 </ContentPage>
 

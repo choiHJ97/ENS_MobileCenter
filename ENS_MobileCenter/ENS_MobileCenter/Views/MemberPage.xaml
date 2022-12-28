@@ -1,12 +1,89 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ENS_MobileCenter.Views.MemberPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+             x:Class="ENS_MobileCenter.Views.MemberPage"
+             BackgroundColor="#EEEEEE"
+             xmlns:local="clr-namespace:ENS_MobileCenter.Views"
+             xmlns:controls="clr-namespace:ENS_MobileCenter.Views;assembly=ENS_MobileCenter"
+             xmlns:c1="http://schemas.grapecity.com/xf/2019/xaml">
+
+    <Shell.TitleView>
+        <Grid>
+            <Label x:Name="PVName"
+               HorizontalOptions="Center" FontFamily="SpoqaRegular" VerticalOptions="Center"
+               FontSize="18" FontAttributes="Bold" TextColor="White"/>
+        </Grid>
+    </Shell.TitleView>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#EEEEEE
+            </Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="Refresh.png" Priority="0" Clicked="OnRefreshBtClicked"/>
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <StackLayout Grid.Row="0" VerticalOptions="Fill" HorizontalOptions="Fill" BackgroundColor="#EEEEEE" Padding="15,0,15,0" >
+            <Label Grid.Row="0" Margin="0,10,0,0" Text="회원정보" FontFamily="SpoqaRegular"
+                        TextColor="#777777"
+                           FontSize="20"
+                       HorizontalOptions="Center"/>
+            <BoxView Grid.Row="2" HeightRequest="1" Color="#D3D3D3"/>
+            <BoxView HeightRequest="0" Color="#D3D3D3"/>
+            <Grid>
+                <StackLayout BackgroundColor="White" Padding="15,0,15,0"  >
+                    <Grid Padding="10,0,10,0">
+                    </Grid>
+                    <Label Grid.Row="0" Text="회원정보 변경" HorizontalOptions="Center" VerticalOptions="Start" FontSize="20" FontAttributes="Bold" TextColor="#0CA688" FontFamily="SpoqaRegular"/>
+
+                    <BoxView Grid.Row="1" HeightRequest="1" WidthRequest="10" Color="#D3D3D3" VerticalOptions="End"/>
+                    <Grid >
+                        <Label Grid.Row="0" Text="사용자명" HorizontalOptions="Start" VerticalOptions="Center" FontSize="17" FontFamily="SpoqaRegular"/>
+                        <Frame  Grid.Row="1" HasShadow="False" HeightRequest="25"
+                       x:Name="IDFrame"
+                       BorderColor="#D3D3D3"
+                               VerticalOptions="Center"/>
+                    <controls:BorderlessEntry Grid.Row="1"
+                    x:Name="usernameEntry" VerticalOptions="Center"
+                    Placeholder="사용자명 입력" TextColor="#BFBFBF" HorizontalTextAlignment="Center" FontFamily="SpoqaRegular"
+                    Margin="10,0,0,0" 
+                    />
+                        <Label Grid.Row="2" Text="비밀번호" HorizontalOptions="Start" VerticalOptions="Center" FontSize="17" FontFamily="SpoqaRegular" />
+                        <Label Grid.Row="2" x:Name="pwdlabel" HorizontalOptions="End" VerticalOptions="Center" FontFamily="SpoqaRegular" />
+                        <StackLayout Grid.Row="3">
+                            <Grid>
+                                <Frame  HasShadow="False" x:Name="pwdFrame" HorizontalOptions="Start" BorderColor="#D3D3D3" WidthRequest="225" HeightRequest="30"/>
+                                <controls:BorderlessEntry x:Name ="pwdEntry" x:FieldModifier="public" HorizontalOptions="Start" IsPassword="true" WidthRequest="280" HeightRequest="30" HorizontalTextAlignment="Center" TextColor="#BFBFBF" FontSize="25" IsEnabled="False" FontFamily="SpoqaRegular"/>
+                                <Button x:Name="pwdeditBt" Text="변경" HeightRequest="50" HorizontalOptions="End" WidthRequest="80" BackgroundColor="#009688" TextColor="White" FontSize="20" FontAttributes="Bold" FontFamily="SpoqaRegular"
+                                Clicked="OnPwdChangedBtClicked"/>
+                            </Grid>
+                        </StackLayout>
+                        <Label Grid.Row="4" Text="사용자 연락처" VerticalOptions="Center" HorizontalOptions="Start" FontSize="17" FontFamily="SpoqaRegular" />
+                        <Frame  Grid.Row="5" HasShadow="False" HeightRequest="25" x:Name="phoneFrame" BorderColor="#D3D3D3"
+                               VerticalOptions="Center"/>
+                        <controls:BorderlessEntry Grid.Row="5"
+                    x:Name="phoneEntry" VerticalOptions="Center" FontFamily="SpoqaRegular"
+                    Placeholder="000-0000-0000" TextColor="#BFBFBF" HorizontalTextAlignment="Center"
+                    Margin="5,0,0,0" />
+                        <Label Grid.Row="6" Text="사용자 이메일" HorizontalOptions="Start" VerticalOptions="Center" FontSize="17" FontFamily="SpoqaRegular" />
+                        <Frame  Grid.Row="7" HasShadow="False" HeightRequest="25"
+                       x:Name="mailFrame"
+                       BorderColor="#D3D3D3"
+                               VerticalOptions="Center"/>
+                        <controls:BorderlessEntry Grid.Row="7" FontFamily="SpoqaRegular"
+                    x:Name="mailEntry" VerticalOptions="Center"
+                    Placeholder="0000@000000" TextColor="#BFBFBF" HorizontalTextAlignment="Center"
+                    Margin="5,0,0,0"/>
+                        <Button Grid.Row="8" VerticalOptions="End" x:Name="InsertBt" Text="저장" HorizontalOptions="Fill" HeightRequest="45" FontFamily="SpoqaRegular" WidthRequest="110" BackgroundColor="#009688" TextColor="White" FontAttributes="Bold" FontSize="20" Clicked="BtInsert_Click"/>
+                    </Grid>
+                    <Grid Padding="20">
+                    </Grid>
+                </StackLayout>
+            </Grid>
         </StackLayout>
-    </ContentPage.Content>
+    </Grid>
+    
+
 </ContentPage>
+    

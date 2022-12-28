@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"  
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             x:Class="ENS_MobileCenter.Views.ShowPopupDemo"  
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"  
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 xmlns:controls="clr-namespace:ENS_MobileCenter.Views;assembly=ENS_MobileCenter"
+             BackgroundColor="Transparent">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation   
+                      PositionIn="Center"  
+                      PositionOut="Center"  
+                      ScaleIn="1.2"  
+                      ScaleOut="0.8"  
+                      DurationIn="400"  
+                      DurationOut="300"  
+                      EasingIn="SinOut"  
+                      EasingOut="SinIn"  
+      HasBackgroundAnimation="False"/>
+    </pages:PopupPage.Animation>
+    <StackLayout VerticalOptions="Center"  Padding="20,0" HorizontalOptions="FillAndExpand" >
+        <Frame Padding="5" BackgroundColor="White" BorderColor="Black">
+            <StackLayout BackgroundColor="White" Padding="25,0,25,0"  >
+                <Grid Padding="10">
+                    
+                </Grid>
+                <Label Text="비밀번호 변경" TextColor="#0CA688" FontSize="20" HorizontalOptions="Center" FontAttributes="Bold" FontFamily="SpoqaRegular"></Label>
+                <Grid >
+                    <Label Grid.Row="0" Text="기존 비밀번호" HorizontalOptions="Start" VerticalOptions="Center" FontSize="17" FontFamily="SpoqaRegular"/>
+                    <Label Grid.Row="0" x:Name="pwdMessage" VerticalOptions="Center" HorizontalOptions="End" TextColor="Red" FontSize="10" FontFamily="SpoqaRegular"/>
+                    <Frame  Grid.Row="1" HasShadow="False"
+                       x:Name="oldpwdFrame"
+                       BorderColor="#D3D3D3"
+                               VerticalOptions="Center"/>
+                    <controls:BorderlessEntry Grid.Row="1"
+                    x:Name="oldpwdEntry" VerticalOptions="Center"
+                    Placeholder="기존 비밀번호 입력" TextColor="#BFBFBF" HorizontalTextAlignment="Center" IsPassword="true" FontFamily="SpoqaRegular"
+                    Margin="10,0,0,0" TextChanged="OnoldpwdChanged"
+                    />
+                    <Label Grid.Row="2" Text="변경 비밀번호" HorizontalOptions="Start" VerticalOptions="Center" FontSize="17" FontFamily="SpoqaRegular" />
+                    <Frame  Grid.Row="3" HasShadow="False"
+                       x:Name="newpwdFrame"
+                       BorderColor="#D3D3D3"
+                               VerticalOptions="Center"/>
+                    <controls:BorderlessEntry Grid.Row="3"
+                    x:Name="newpwdEntry" VerticalOptions="Center"
+                    Placeholder="변경 비밀번호 입력" TextColor="#BFBFBF" HorizontalTextAlignment="Center" IsPassword="true" FontFamily="SpoqaRegular"
+                    Margin="10,0,0,0" 
+                    />
+                    <Label Grid.Row="4" Text="변경 비밀번호 확인" HorizontalOptions="Start" VerticalOptions="Center" FontSize="17" FontFamily="SpoqaRegular"/>
+                    <Label Grid.Row="4" x:Name="RepwdMessage" VerticalOptions="Center" HorizontalOptions="End" TextColor="Red" FontSize="10" FontFamily="SpoqaRegular" />
+                    <Frame  Grid.Row="5" HasShadow="False"
+                       x:Name="conpwdFrame"
+                       BorderColor="#D3D3D3"
+                               VerticalOptions="Center"/>
+                    <controls:BorderlessEntry Grid.Row="5"
+                    x:Name="conpwdEntry" VerticalOptions="Center"
+                    Placeholder="변경 비밀번호 재입력" TextColor="#BFBFBF" HorizontalTextAlignment="Center" IsPassword="true" FontFamily="SpoqaRegular"
+                    Margin="10,0,0,0" TextChanged="OnconpwdChanged"/>
+                </Grid>
+                <BoxView HeightRequest="0.5" Color="#D3D3D3"/>
+                <Grid >
+                    <Grid  ColumnSpacing="10">
+                        <Button Grid.Column="3" Text="취소" WidthRequest="15" HeightRequest="40" BackgroundColor="Transparent" TextColor="#009688" Clicked="CancelBt_Clicked" FontAttributes="Bold" FontFamily="SpoqaRegular"/>
+                        <Button Grid.Column="4" x:Name ="inserBt" Text="변경" WidthRequest="15" HeightRequest="40" BackgroundColor="Transparent" TextColor="#009688" Clicked="inserBt_Clicked" FontAttributes="Bold" FontFamily="SpoqaRegular"/>
+                    </Grid>
+                </Grid>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>  

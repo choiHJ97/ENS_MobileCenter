@@ -2,18 +2,17 @@
 <Shell xmlns="http://xamarin.com/schemas/2014/forms" 
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:ENS_MobileCenter.Views"
-       xmlns:this="clr-namespace:ENS_MobileCenter"
-       x:Class="ENS_MobileCenter.AppShell">
+       xmlns:this="clr-namespace:ENS_MobileCenter" x:DataType="this:AppShell"
+       x:Class="ENS_MobileCenter.AppShell"
+       FlyoutWidth="350">
 
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
     
         https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
     -->
-    <NavigationPage.TitleView>
-        <Label Text="태양광 조회 시스템" HorizontalOptions= "Center" />
-        
-    </NavigationPage.TitleView>
+
+
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
@@ -26,28 +25,83 @@
                 <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+                
+            </Style>
+            <Style TargetType="Label"
+       Class="FlyoutItemLabelStyle">
+                <Setter Property="TextColor"
+            Value="Black" />
+                <Setter Property="HeightRequest" Value="100" />
+                <Setter Property="FontFamily" Value="SpoqaRegular" />
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="15"/>
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
         </ResourceDictionary>
     </Shell.Resources>
 
-    <TabBar>
-        <ShellContent Title="발전현황" Route="DayPage" ContentTemplate="{DataTemplate local:DayPage}" />
-        <ShellContent Title="발전이력"  ContentTemplate="{DataTemplate local:HistroyPage}" />
-        <ShellContent Title="이벤트이력" ContentTemplate="{DataTemplate local:EventPage}" />
-        <ShellContent Title="회원정보" ContentTemplate="{DataTemplate local:MemberPage}"/>
-        <ShellContent Title="로그아웃" ContentTemplate="{DataTemplate local:PageLogout}"/>
-
-    </TabBar>
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="0.2*,0.8*">
+                <Image Source="logout.png"
+                       Margin="5"
+                       HeightRequest="30" />
+                    <Label Grid.Column="1" Text=" 로그아웃"
+                       FontFamily="SpoqaRegular"
+                       TextColor="Black"
+                       VerticalTextAlignment="Center" 
+                       FontSize="15"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    <FlyoutItem Title="메인페이지" Icon="menu.png" >
+        <Tab Title="발전현황" Icon="today.png">
+            <ShellContent Title="발전현황"  Route="DayPage" ContentTemplate="{DataTemplate local:DayPage}"/>
+        </Tab>
+        <Tab Title="일 발전량" Icon="week.png">
+            <ShellContent x:Name="DayTab" Title="일 발전량" Route="WeekPage"  ContentTemplate="{DataTemplate local:WeekPage}"/>
+        </Tab>
+        <Tab Title="월 발전량" Icon="month.png">
+            <ShellContent Title="월 발전량" Route="MonthPage"  ContentTemplate="{DataTemplate local:MonthPage}" />
+        </Tab>
+        <Tab Title="이벤트 현황" Icon="notifications.png">
+            <ShellContent Title="이벤트 현황" Route="EventPage" ContentTemplate="{DataTemplate local:EventPage}"/>
+        </Tab>
+        <Tab Title="회원정보" Icon="person.png">
+            <ShellContent Title="회원정보" ContentTemplate="{DataTemplate local:MemberPage}"/>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="공지사항">
+        <!-- <ShellContent Title="공지사항" ContentTemplate="{DataTemplate local:NoticePage}" />-->
+    </FlyoutItem>
+    <MenuItem  
+              Command="{Binding ExecuteLogout}">
+    </MenuItem>
+    
+    
+    
 
     <!--
         If you would like to navigate to this content you can do so by calling
         await Shell.Current.GoToAsync("//LoginPage");
     -->
-    <TabBar>
-        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:DayPage}" />
-    </TabBar>
-
+    <Shell.FlyoutHeader>
+        <local:FlyOutHeader />
+    </Shell.FlyoutHeader>
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <StackLayout Padding="30">
+                <Image Source="greennewdeallogo.png" WidthRequest="70" VerticalOptions="Center" />
+                <Label TextColor="Black" FontFamily="SpoqaRegular"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="10">
+                    <Label.Text>
+                        © 2022.ENS inc. all rights reserved.
+                    </Label.Text>
+                </Label>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
 
 </Shell>

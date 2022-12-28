@@ -3,6 +3,12 @@ using ENS_MobileCenter.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+[assembly: ExportFont("NotoSansKR_Regular.otf", Alias = "RegularFont")]
+[assembly: ExportFont("NotoSansKR_Thin.otf", Alias = "ThinFont")]
+[assembly: ExportFont("NotoSansKR_Bold.otf", Alias = "BoldFont")]
+[assembly: ExportFont("NotoSansKR_Medium.otf", Alias = "MediumFont")]
+[assembly: ExportFont("NotoSansKR_Light.otf", Alias = "LightFont")]
+[assembly: ExportFont("SpoqaHanSansNeo_Regular.ttf", Alias = "SpoqaRegular")]
 namespace ENS_MobileCenter
 {
     public partial class App : Application
@@ -13,7 +19,7 @@ namespace ENS_MobileCenter
             Application.Current.Resources.Add(new Xamarin.Forms.Style(typeof(Page))
             {
                 Setters = {
-                    new Xamarin.Forms.Setter { Property = PageLogin.BackgroundImageProperty, Value = "bgimg.jpg"},
+                   /* new Xamarin.Forms.Setter { Property = PageLogin.BackgroundImageProperty, Value = "bgimg.jpg"},*/
                 }
             });
             if (!IsUserLoggedIn)

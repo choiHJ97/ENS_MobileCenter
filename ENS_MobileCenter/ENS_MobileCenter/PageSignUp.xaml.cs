@@ -28,7 +28,7 @@ namespace ENS_MobileCenter
                 if (rootPage != null)
                 {
                     App.IsUserLoggedIn = true;
-                    Navigation.InsertPageBefore(new MainPage(), Navigation.NavigationStack.First());
+                    Navigation.InsertPageBefore(new AppShell(), Navigation.NavigationStack.First());
                     await Navigation.PopToRootAsync();
                 }
             }

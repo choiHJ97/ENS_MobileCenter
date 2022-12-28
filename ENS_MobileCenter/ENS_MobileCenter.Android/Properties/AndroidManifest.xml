@@ -1,6 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.ens_mobilecenter">
-    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="33" />
-    <application android:label="ENS_MobileCenter.Android" android:theme="@style/MainTheme"></application>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="4" android:versionName="1.2" package="com.companyname.ens_mobilecenter" android:installLocation="preferExternal">
+	<uses-sdk android:minSdkVersion="22" android:targetSdkVersion="32" />
+	<application android:label="ENS_MobileCenter.Android" android:theme="@style/MainTheme" android:icon="@mipmap/ic_launcher"></application>
+	<!-- <receiver
+    android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"
+    android:exported="false" />
+  
+  <receiver
+      android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+      android:exported="true"
+      android:permission="com.google.android.c2dm.permission.SEND">
+    <intent-filter>
+      <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+      <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+      <category android:name="${applicationId}" />
+    </intent-filter>
+  </receiver>-->
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
 </manifest>

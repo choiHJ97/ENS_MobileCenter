@@ -19,8 +19,9 @@ namespace ENS_MobileCenter.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            C1.Xamarin.Forms.Chart.Platform.iOS.FlexChartRenderer.Init();
             LoadApplication(new App());
-
+            Rg.Plugins.Popup.Popup.Init();
             return base.FinishedLaunching(app, options);
         }
     }

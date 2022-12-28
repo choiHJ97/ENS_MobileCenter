@@ -11,8 +11,44 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="font\custom_font_family.xml" />
+    <None Remove="font\NotoSansKR_Black.otf" />
+    <None Remove="font\NotoSansKR_Bold.otf" />
+    <None Remove="font\NotoSansKR_Light.otf" />
+    <None Remove="font\NotoSansKR_Medium.otf" />
+    <None Remove="font\NotoSansKR_Regular.otf" />
+    <None Remove="font\NotoSansKR_Thin.otf" />
+    <None Remove="font\SpoqaHanSansNeo_Bold.ttf" />
+    <None Remove="font\SpoqaHanSansNeo_Light.ttf" />
+    <None Remove="font\SpoqaHanSansNeo_Medium.ttf" />
+    <None Remove="font\SpoqaHanSansNeo_Regular.ttf" />
+    <None Remove="font\SpoqaHanSansNeo_Thin.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="font\custom_font_family.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="font\NotoSansKR_Black.otf" />
+    <EmbeddedResource Include="font\NotoSansKR_Bold.otf" />
+    <EmbeddedResource Include="font\NotoSansKR_Light.otf" />
+    <EmbeddedResource Include="font\NotoSansKR_Medium.otf" />
+    <EmbeddedResource Include="font\NotoSansKR_Regular.otf" />
+    <EmbeddedResource Include="font\NotoSansKR_Thin.otf" />
+    <EmbeddedResource Include="font\SpoqaHanSansNeo_Bold.ttf" />
+    <EmbeddedResource Include="font\SpoqaHanSansNeo_Light.ttf" />
+    <EmbeddedResource Include="font\SpoqaHanSansNeo_Medium.ttf" />
+    <EmbeddedResource Include="font\SpoqaHanSansNeo_Regular.ttf" />
+    <EmbeddedResource Include="font\SpoqaHanSansNeo_Thin.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="C1.Xamarin.Forms.Chart" Version="4.8.20213.512" />
+    <PackageReference Include="C1.Xamarin.Forms.Grid" Version="4.8.20213.512" />
     <PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
     <PackageReference Include="MySqlConnector" Version="2.2.1" />
+    <PackageReference Include="Rg.Plugins.Popup.Gmo" Version="1.1.5.3" />
     <PackageReference Include="SimpleCharts" Version="1.0.0" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
@@ -127,22 +163,28 @@
     <EmbeddedResource Update="AppShell.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popupload.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\FlyOutHeader.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MonthPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NoticePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\PageLogin.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="PageSignUp.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AboutPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\DayPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\EventPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\HistroyPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MemberPage.xaml">
@@ -151,5 +193,19 @@
     <EmbeddedResource Update="Views\PageLogout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\ProgressBarPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ShowPopupDemo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\WeekPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Views\kaco\" />
   </ItemGroup>
 </Project>
